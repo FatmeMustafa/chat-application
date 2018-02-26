@@ -42,21 +42,24 @@ header h1 {
 .landingpagesection p {
     text-align: center;
     margin-top: 25px;
-    margin-bottom: 30px;   
+    line-height: 25px;
+    margin-bottom: 30px; 
+    margin-right: 20em;  
+    margin-left: 20em;  
 }
 .landingpagesection input {
     display: block;
     margin: 0 auto;
     cursor: pointer;
+    color: #fff;
     border: 0;
     width: 30em;
-    color: white;
     padding: 15px;
     font-size: 16px; 
     font-family: Merriweatherlight; 
 }
 #login {
-    background-color: #fa7000;
+    background-color: #43D1AF;
 }
 #register {
     background-color:#004241;
@@ -78,32 +81,38 @@ header h1 {
 /*************Styling Registration-form*************/
 #registrationForm {
     display: none;
-    margin-left: 40px;
+    text-align: center;
     color: #3f4242; 
-    font-family: Merriweatherlight;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 16px;
+    background-color: #F7F7F7;
 }
 #registrationForm h2 {
-    color: #106e5f;
-    background-color: #ebdede;
-    margin-top: 40px; 
-    margin-bottom: 40px; 
+    background-color: #43D1AF;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    margin: -16px -16px 16px -16px;
 }
 #registrationForm input {
     margin-bottom: 10px;
     margin-top: 5px;
-    width: 20%; 
-    padding: 2px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 2%;
     font-family: Merriweatherlight;
 }
 #registrationForm span {
     color: red;
+    padding-bottom: 200px;
 }
 #registrationForm #submitBTN {
-    background-color: #fa7000;
-    border: 0; 
     cursor: pointer;
-    color: white;
+    background-color: #106e5f;
+    color: #fff;
     font-size: 16px;
     padding: 10px;
-    margin-top:20px;
+    width: 100%;
 }

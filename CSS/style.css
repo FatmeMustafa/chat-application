@@ -37,16 +37,11 @@ header h1 {
 .loginsection h2 {
     text-align: center;
     color: #106e5f;
-    margin-top: 70px; 
+    margin-top: 80px; 
 }
 .loginsection p {
     text-align: center;
     margin-top: 25px;
-}
-.loginsection p:nth-child(3) {
-    color: #106e5f;
-    font-size: 20px;
-    margin-top: 30px;
     margin-bottom: 30px;   
 }
 .loginsection input {
@@ -54,16 +49,16 @@ header h1 {
     margin: 0 auto;
     cursor: pointer;
     border: 0;
-    width: 35em;
+    width: 30em;
     color: white;
     padding: 15px;
     font-size: 16px; 
     font-family: Merriweatherlight; 
 }
-#loginFacebook {
-    background-color: #3B5998;
+#login {
+    background-color: #fa7000;
 }
-#loginSmartTalk {
+#signup {
     background-color:#004241;
 }
 .loginsection div p {
@@ -72,8 +67,8 @@ header h1 {
     text-align: center; 
     border-bottom: 0.5px solid #3f4242; 
     line-height: 0.1em;
-    margin-left: 22.5em;
-    margin-right: 22.5em;    
+    margin-left: 23.5em;
+    margin-right: 23.5em;    
 }
 .loginsection div p span {
     padding: 0 20px;

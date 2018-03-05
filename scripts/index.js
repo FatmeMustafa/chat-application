@@ -2,9 +2,14 @@ $(function() {
 
 /***********************Showing Registration Form***********************/
 
-$("#register").on("click", function () {
+$("#register").on("click", function () {       //REGISTER button.  
     $("#registrationForm").show();
     $(".landingpagesection").hide();
+});
+
+$(".back").on("click", function () {        //BACK button.
+    $("#registrationForm").hide();
+    $(".landingpagesection").show();
 });
 
 /*********************Validating Registration Form**********************/
@@ -51,7 +56,7 @@ let usersRegistrationMessage = $("#registrationMessage")
         $("#registrationMessage").text("Please fill in the required fields.");
         $("#registrationMessage").css({"color": "red"});
     } else {
-        $("#registrationMessage").text("Thank you for joining us!");
+        $("#registrationMessage").text("Thank you for joining us at SmartTalk!");
         $("#registrationMessage").css({"color": "green"});
     }
 });

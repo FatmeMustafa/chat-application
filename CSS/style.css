@@ -102,11 +102,21 @@ header h1 {
 #registrationForm span {
     color: red;
 }
-#registrationForm #registerBTN {
+#registrationForm #registerBTN,
+#registrationForm .back {
     cursor: pointer;
-    background-color: #004241;
     color: #fff;
     font-size: 16px;
     padding: 10px;
     width: 100%;
+    border: 0;
+    font-family: Merriweatherlight;
+    font-weight: bold;
+}
+#registrationForm #registerBTN {
+    background-color: #004241;
+    margin-top: 15px;
+}
+#registrationForm .back {
+    background-color: #43D1AF;
 }

@@ -74,7 +74,8 @@ header h1 {
 
 /*************Styling Registration-form*************/
 
-#registrationForm {
+#registrationForm,
+#loginForm  {
     display: none;
     text-align: center;
     color: #3f4242; 
@@ -84,13 +85,15 @@ header h1 {
     font-size: 16px;
     background-color: #F7F7F7;
 }
-#registrationForm h2 {
+#registrationForm h2,
+#loginForm h2 {
     background-color: #43D1AF;
     padding: 10px 0;
     color: #fff;
     margin: -10px -10px 10px -10px;
 }
-#registrationForm input {
+#registrationForm input,
+#loginForm input {
     margin-bottom: 10px;
     margin-top: 5px;
     width: 100%;
@@ -99,11 +102,13 @@ header h1 {
     padding: 2%;
     font-family: Merriweatherlight;
 }
-#registrationForm span {
+#registrationForm span,
+#loginForm span {
     color: red;
 }
 #registrationForm #registerBTN,
-#registrationForm .back {
+.back,
+#loginForm #loginBTN {
     cursor: pointer;
     color: #fff;
     font-size: 16px;
@@ -113,10 +118,13 @@ header h1 {
     font-family: Merriweatherlight;
     font-weight: bold;
 }
-#registrationForm #registerBTN {
+#registrationForm #registerBTN,
+#loginForm #loginBTN {
     background-color: #004241;
     margin-top: 15px;
 }
+#loginForm .back,
 #registrationForm .back {
     background-color: #43D1AF;
+    border: 0;
 }

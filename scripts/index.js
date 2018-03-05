@@ -1,5 +1,18 @@
 $(function() {
 
+    let config = {
+        apiKey: "AIzaSyAn9NuvsF2kiWAgcB4yrXqwJKHK-ZCFEL8",
+        authDomain: "chat.firebaseapp.com",
+        databaseURL: "https://Chat.firebaseio.com",
+      };
+      firebase.initializeApp(config);
+
+//     const auth = firebase.auth();
+      const db = firebase.database();
+
+     
+
+      
 /***********************Showing And Hiding Elements**********************/
 
 $("#register").on("click", function () {       //showing registration page when clicking the registration button.  
@@ -20,9 +33,14 @@ $("#login").on("click", function () {       //showing login page when clicking t
 
 /*********************Validating Registration Form**********************/
 
-$("#registerBTN").on("click", function () {
+let usersUsername;
+let usersFullName;
+let usersEmail;
+let usersPassword;
 
-    let usersUsername = $("#userName").val();
+$("#registerBTN").on("click", function (e) {
+
+    usersUsername = $("#userName").val();
     if (usersUsername === "" || isNaN(usersUsername) === false) {       //checks if input field is missing or is a number.
         $("#error1").text(" *");
         $("#userName").css({"borderColor": "red"});
@@ -30,7 +48,7 @@ $("#registerBTN").on("click", function () {
         $("#error1").text("");
         $("#userName").css({"borderColor": "#ccc"});
     }     
-let usersFullName = $("#fullName").val();          
+    usersFullName = $("#fullName").val();          
     if (usersFullName === "" || isNaN(usersFullName) === false || usersFullName.split(" ").length === 1) {      //checks if input field is missing, is a number or contains two strings.  
         $("#error2").text(" *");
         $("#fullName").css({"borderColor": "red"});
@@ -38,7 +56,7 @@ let usersFullName = $("#fullName").val();
         $("#error2").text("");
         $("#fullName").css({"borderColor": "#ccc"});
     }
-let usersEmail = $("#email").val(); 
+    usersEmail = $("#email").val(); 
     if (usersEmail === "" || usersEmail != usersEmail.match(/^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/)) {     //checks if the input field is missing or contains an invalid email adress.
         $("#error3").text(" *");
         $("#email").css({"borderColor": "red"});
@@ -46,7 +64,7 @@ let usersEmail = $("#email").val();
         $("#error3").text("");
         $("#email").css({"borderColor": "#ccc"});
     }
-let usersPassword = $("#password").val();
+usersPassword = $("#password").val();
     if (usersPassword === "" || usersPassword.length < 6) {     //checks if the input field is missing or has a password below 6 charecters
         $("#error4").text(" *");
         $("#password").css({"borderColor": "red"});
@@ -65,7 +83,22 @@ let usersRegistrationMessage = $("#registrationMessage")
         $("#registrationMessage").text("Thank you for joining us at SmartTalk!");
         $("#registrationMessage").css({"color": "green"});
     }
+    const auth = firebase.auth();
+    const promise = auth.createUserWithEmailAndPassword(usersEmail, usersPassword);
+
+
 });
+
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+        console.log(firebaseUser);
+    } else {
+        console.log("not logged in!");
+    }
+});
+
+
 
 /*************************Validating Login Form*************************/
 
@@ -96,6 +129,9 @@ let usersLoginMessage = $("#loginMessage")
         $("#loginMessage").css({"color": "green"});
     }
 });
+
+/*************************TEEEEEEEEEEEST*************************/
+
 
 
 });

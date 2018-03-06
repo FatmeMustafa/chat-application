@@ -49,7 +49,7 @@
     <!--Login Form-->
     <form id="loginForm" name="loginFormName">
         <h2>Login:</h2> 
-        <span id ="error1Login"></span>User name:<br>
+        <span id ="error1Login"></span>Email:<br>
         <input type="text" name="userNameLogin" id="userNameLogin"><br>
         <span id ="error2Login"></span>Password:<br>
         <input type="password" name="passwordLogin" id="passwordLogin"><br>     
@@ -58,6 +58,23 @@
         <!--Back to Landingpage-->
         <input type="button" class="back" value="BACK">
     </form>
+ 
+    <!--Lobby Room-->
+    <section class="lobbyRoom">
+        <p id="loggedInUser"></p>
+        <h2 id="chatroom1">Chatroom1</h2>
+        <h2 id="chatroom2">Chatroom2</h2>
+        <h2 id="chatroom3">Chatroom3</h2>
+        <input type="button" class="logout" value="LOGOUT">
+    </section>
+
+        <!--Chat Room-->
+        <section class="chatRoom">
+            <input type="textarea" class="message">
+            <input type="button" class="send" value="Send">
+            <input type="button" class="backLobby" value="BACK">
+        </section>
+
 
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>

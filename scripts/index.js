@@ -3,7 +3,7 @@ $(function() {
     let config = {
         apiKey: "AIzaSyAn9NuvsF2kiWAgcB4yrXqwJKHK-ZCFEL8",
         authDomain: "chat.firebaseapp.com",
-        //databaseURL: "https://Chat.firebaseio.com", firestore
+        databaseURL: "https://Chat.firebaseio.com", firestore
       };
       firebase.initializeApp(config);
 

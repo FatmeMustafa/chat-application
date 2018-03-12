@@ -1,24 +1,23 @@
 $(function() {
 
-    let config = {
-        apiKey: "AIzaSyAn9NuvsF2kiWAgcB4yrXqwJKHK-ZCFEL8",
-        authDomain: "chat.firebaseapp.com",
-        databaseURL: "https://Chat.firebaseio.com", firestore
-      };
-      firebase.initializeApp(config);
+let config = {
+    apiKey: "AIzaSyAn9NuvsF2kiWAgcB4yrXqwJKHK-ZCFEL8",
+    authDomain: "chat.firebaseapp.com",
+    projectId: "chat-f2bf0"
+};
+firebase.initializeApp(config);
 
-//     const auth = firebase.auth();
-      const db = firebase.firestore();
+const auth = firebase.auth();
+const db = firebase.firestore();
 
-     
+let firebaseUser;
 
-      
 /***********************Showing And Hiding Elements**********************/
 
-$("#register").on("click", function () {       //showing registration page when clicking the registration button.  
+$("#register").on("click", function () {        //showing registration page when clicking the registration button.  
     $("#registrationForm").show();
     $(".landingpagesection").hide();
-    $(".lobbyRoom").hide(); //change this!
+    $(".lobbyRoom").hide();
     $(".chatRoom").hide();
 });
 
@@ -36,6 +35,27 @@ $("#login").on("click", function () {       //showing login page when clicking t
     $(".lobbyRoom").hide();
     $(".chatRoom").hide();
 });
+
+$("#chatroom1").on("click", function() {        //showing chatroom1 page when clicking the chatroom1 button.
+    $(".landingpagesection").hide();
+    $("#registrationForm").hide();
+    $("#loginForm").hide();
+    $(".lobbyRoom").hide();
+    $(".chatRoom").show();
+});
+
+$(".backLobby").on("click", function() {        //showing lobby page when clicking the back button.
+    $(".landingpagesection").hide();
+    $("#registrationForm").hide();
+    $("#loginForm").hide();
+    $(".lobbyRoom").show();
+    $(".chatRoom").hide();
+});
+
+
+
+
+
 
 /*********************Validating Registration Form**********************/
 
@@ -87,15 +107,15 @@ let usersRegistrationMessage = $("#registrationMessage")
         $("#registrationMessage").css({"color": "red"});
     } else {
         $("#registrationMessage").text("Thank you for joining us at SmartTalk!");
-        $("#registrationMessage").css({"color": "green"});
+        $("#registrationMessage").css({"color": "green"}); 
     }
+
     const auth = firebase.auth();
     const promise = auth.createUserWithEmailAndPassword(usersEmail, usersPassword);
 });
 
-
-firebase.auth().onAuthStateChanged(firebaseUser => {
-
+firebase.auth().onAuthStateChanged(_firebaseUser => {
+    firebaseuser=_firebaseUser;
     if (firebaseUser) {
       console.log(firebaseUser.email);
         console.log("YOU ARE LOGGED IN!");
@@ -107,8 +127,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
        $("#loginForm").hide();
        $(".lobbyRoom").show();
        $(".chatRoom").hide();
-
-
     } else {
         console.log("not logged in!");
         $(".lobbyRoom").hide();
@@ -118,21 +136,27 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
 
 /************chatroom event*********************/
-$("#chatroom1").on("click", function() {
-    $(".landingpagesection").hide();
-    $("#registrationForm").hide();
-    $("#loginForm").hide();
-    $(".lobbyRoom").hide();
-    $(".chatRoom").show();
-});
 
-$(".send").on("click", function() {
+
+/*$(".send").on("click", function() {    
     let currentUser = firebaseUser.email;
     let currentText = $(".message").val();
     //config.databaseURL.push({user: currentUser, text: currentText});
     db.push({user: currentUser, text: currentText});
     currentText.val("");
+});*/
+
+$(".send").on("click", function() { 
+    //console.log(usersEmail)
+    db.collection("messages").add({
+        text: $(".message").val(),
+        user: firebaseUser.email
+    })
 });
+
+
+
+
 /***********************************************/
 
 $(".logout").on("click", e => {
@@ -144,21 +168,6 @@ $(".logout").on("click", e => {
 
 /**************************LOBBY*****************************************/
 
-$("#chatroom1").on("click", function() {
-    $(".landingpagesection").hide();
-    $("#registrationForm").hide();
-    $("#loginForm").hide();
-    $(".lobbyRoom").hide();
-    $(".chatRoom").show();
-});
-
-$(".backLobby").on("click", function() {
-    $(".landingpagesection").hide();
-    $("#registrationForm").hide();
-    $("#loginForm").hide();
-    $(".lobbyRoom").show();
-    $(".chatRoom").hide();
-});
 
 
 /*************************Validating Login Form*************************/

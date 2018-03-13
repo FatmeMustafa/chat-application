@@ -150,8 +150,24 @@ $(".send").on("click", function() {
     db.collection("messages").add({
     text: $(".message").val(),
     user: firebaseUser.email
-})
 });
+
+let collection = db.collection("messages");
+console.log(collection);
+collection.get().then(function(mes) {
+    if (mes.exists) {
+        console.log("Data:", mes.data());
+    } else {
+        console.log("No data...");
+    }
+});
+
+/*let collection = db.collection("messages");
+collection.get().then(messages => {
+    messages.forEach(message => {
+        console.log(message.data());
+    });
+});*/
 
 /*******************************Lobbyroom*****************************/
 

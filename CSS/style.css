@@ -72,7 +72,7 @@ header h1 {
     background-color: #ebdede;
 }
 
-/*************Styling Registration-form*************/
+/*********Styling Registration & Login-form*********/
 
 #registrationForm,
 #loginForm  {
@@ -107,8 +107,8 @@ header h1 {
     color: red;
 }
 #registrationForm #registerBTN,
-.back,
-#loginForm #loginBTN {
+#loginForm #loginBTN,
+.back {
     cursor: pointer;
     color: #fff;
     font-size: 16px;
@@ -123,8 +123,8 @@ header h1 {
     background-color: #004241;
     margin-top: 15px;
 }
-#loginForm .back,
-#registrationForm .back {
+#registrationForm .back,
+#loginForm .back {
     background-color: #43D1AF;
     border: 0;
 }

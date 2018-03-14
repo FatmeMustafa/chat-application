@@ -47,6 +47,7 @@
     </form>
 
     <!--Login Form-->
+    <br>
     <form id="loginForm" name="loginFormName">
         <h2>Login:</h2> 
         <span id ="error1Login"></span>Email:<br>
@@ -59,9 +60,10 @@
         <input type="button" class="back" value="BACK">
     </form>
  
-    <!--Lobby Room-->
+    <!--Lobby Room HERE-->
     <section class="lobbyRoom">
-        <p id="loggedInUser"></p>
+        <i class="fas fa-user"><span id="loggedInUser"></span></i>
+        <h2>Your Chatrooms:</h2>
         <h2 id="chatroom1">Chatroom1</h2>
         <h2 id="chatroom2">Chatroom2</h2>
         <h2 id="chatroom3">Chatroom3</h2>
@@ -70,8 +72,9 @@
 
     <!--Chat Room-->
     <section class="chatRoom">
+        <div class="chatbox"></div>
         <input type="textarea" class="message">
-        <input type="button" class="send" value="Send">
+        <input type="button" class="send" value="SEND">
         <input type="button" class="backLobby" value="BACK">
     </section>
 

@@ -128,3 +128,80 @@ header h1 {
     background-color: #43D1AF;
     border: 0;
 }
+
+/***************Styling Lobby-room******************/
+
+.lobbyRoom {
+    margin-left: 5em;
+    margin-top: 3em;
+    color:#3f4242; 
+}
+.fa-user {
+    color: rgb(29, 117, 29);
+    font-size: 30px;
+}
+#loggedInUser {
+    font-size: 25px;
+    margin-left: 10px;
+    font-weight: normal;
+    color: #106e5f;
+}
+.lobbyRoom h2 {
+    margin-top: 1.5em;
+    text-align: center;
+    padding: 5px;
+    font-weight: normal;
+    max-width: 20em;
+    margin-left: 5em;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #43D1AF;
+}
+.lobbyRoom h2:nth-child(2) {
+    background-color:#ebdede;
+    color:#3f4242;  
+    max-width:18em;
+    margin-left: 0em;
+}
+.lobbyRoom .logout {
+    background-color: #004241;
+    margin-top: 20px;
+    margin-left: 20em;
+    border: 0;
+    text-align: center;
+    color: #ffffff; 
+    font-weight: bold;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Merriweatherlight;
+}
+
+/***************Styling Chat-room******************/
+
+.chatbox {
+    background-color: #fff;
+    margin-right: 50em;
+    padding: 20px;
+}
+.chatRoom .send,
+.chatRoom .backLobby {
+    background-color: #004241;
+    margin-top: 20px;
+    border: 0;
+    text-align: center;
+    color: #ffffff; 
+    font-weight: bold;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Merriweatherlight;
+}
+.chatRoom .send {
+    background-color:#43D1AF;
+}
+.chatRoom .message {
+    padding: 10px;
+    width:32em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}

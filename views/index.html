@@ -1,23 +1,22 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Chat-Application</title>
+    <title>Chat-Application</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 </head>
-
 <body>
-    
+
     <!--Header-->
     <header>
         <i class="fab fa-earlybirds"></i>
         <h1>SmartTalk</h1>
     </header>
-
+    
     <!--Landingpage-->
     <section class="landingpagesection">
         <h2>Welcome to BFJ - SmartTalk</h2>
@@ -42,23 +41,50 @@
         <input type="password" name="password" id="password"><br>     
         <span id="registrationMessage"></span><br>
         <input type="button" value="REGISTER" id="registerBTN">
-        <!--Back to Landingpage-->
+    <!--Back to Landingpage-->
         <input type="button" class="back" value="BACK">
     </form>
-
+    
     <!--Login Form-->
+    <br>
     <form id="loginForm" name="loginFormName">
         <h2>Login:</h2> 
-        <span id ="error1Login"></span>User name:<br>
+        <span id ="error1Login"></span>Email:<br>
         <input type="text" name="userNameLogin" id="userNameLogin"><br>
         <span id ="error2Login"></span>Password:<br>
         <input type="password" name="passwordLogin" id="passwordLogin"><br>     
         <span id="loginMessage"></span><br>
         <input type="button" value="LOGIN" id="loginBTN">
-        <!--Back to Landingpage-->
+    <!--Back to Landingpage-->
         <input type="button" class="back" value="BACK">
     </form>
+ 
+    <i class="fas fa-user"><span id="loggedInUser"></span></i>
+    <!--Lobby Room HERE-->
+    <section class="lobbyRoom">
+        <h2>Your Chatrooms:</h2>
+        <h2 id="chatroom1">Chatroom1</h2>
+        <h2 id="chatroom2">Chatroom2</h2>
+        <h2 id="chatroom3">Chatroom3</h2>
+        <input type="button" class="logout" value="LOGOUT">
 
+    </section>
+    
+    <div id="userState"></div>
+    <!--Chatroom-->
+    <section class="chatRoom">
+        <h2>Welcome to the chat</h2>
+        <div class="chatbox scrollbar"></div>
+        <input type="textarea" class="message">
+        <input type="button" class="send" value="SEND">
+        <input type="button" class="backLobby" value="BACK">
+    </section>
+    
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-firestore.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="../scripts/index.js"></script>
 
